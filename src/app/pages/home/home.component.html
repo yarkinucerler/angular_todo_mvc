@@ -1,0 +1,9 @@
+<section class="todoapp">
+  <div class="container">
+    <todo-list-header (add)="onAddTodo($event)"></todo-list-header>
+    <todo-list [todos]="todos" (toggleComplete)="onToggleTodoComplete($event)" (remove)="onRemoveTodo($event)">
+      <todo-list-item *ngFor="let todo of todos" [todo]="todo" (toggleComplete)="onToggleTodoComplete($event)" (remove)="onRemoveTodo($event)"></todo-list-item>
+    </todo-list>
+    <todo-list-footer [todos]="todos"></todo-list-footer>
+  </div>
+</section>

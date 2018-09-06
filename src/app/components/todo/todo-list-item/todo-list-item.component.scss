@@ -1,0 +1,58 @@
+.custom-checkbox {
+  width: 100%;
+}
+
+.toggle {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  & + label {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: white;
+    margin-right: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    border: 1px solid #eee;
+    vertical-align: text-top;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    top: 17.5px;
+    left: 7.5px;
+    width: 2px;
+    height: 2px;
+    background: #7fff00;
+    position: absolute;
+    transform: rotate(45deg);
+    box-shadow: -2px 0 0 #7fff00,
+                2px 0 0 #7fff00,
+                4px 0 0 #7fff00,
+                4px -2px 0 #7fff00,
+                4px -4px 0 #7fff00,
+                4px -6px 0 #7fff00,
+                4px -8px 0 #7fff00,
+                4px -10px #7fff00,
+                4px -12px #7FFF01,
+                4px -14px #7fff00,
+                4px -16px #7fff00;
+  }
+
+  &:checked + label {
+    color: #ddd;
+    text-decoration:line-through;
+  }
+}

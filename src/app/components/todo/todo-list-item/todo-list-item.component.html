@@ -1,0 +1,9 @@
+<li class="list-group-item">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="custom-checkbox" [class.completed]="todo.completed">
+      <input [id]="todo.id" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.completed">
+      <label [for]="todo.id">{{todo.title}}</label>
+    </div>
+    <button class="destroy" (click)="removeTodo(todo)">Delete</button>
+  </div>
+</li>
